@@ -1,0 +1,35 @@
+.navbar {
+  background: #25258eb1;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 80px;
+  max-width: 1500px;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btn {
+  font-size: medium;
+  font-family: serif;
+  padding: 8px 20px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #081337;
+  color: white;
+  border: 2px solid;
+}

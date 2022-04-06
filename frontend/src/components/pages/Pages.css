@@ -1,0 +1,66 @@
+/* this css is for pages like Upload, Drop_off, and Home pages */
+.pages {
+  margin: auto;
+  background-color: white;
+  width: 25em;
+  height: 28em;
+  padding-top: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 1em;
+  font-family: serif;
+}
+
+.center_text {
+  text-align: center;
+  line-height: 0em;
+}
+
+.bold_center_text {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2em;
+  line-height: 0em;
+  padding-bottom: 0.1em;
+}
+
+.upload_btn {
+  font-size: medium;
+  padding: 4px 6px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #bfbfbf;
+  color: #45445a;
+  margin-top: 6em;
+  font-family: serif;
+}
+
+.submit-btn {
+  font-size: large;
+  padding: 4px 6px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #03143e;
+  color: white;
+  font-family: serif;
+}
+
+.contact {
+  position: absolute;
+  top: 87%;
+  left: 20%;
+  font-family: serif;
+  font-size: 25px;
+  color: #03143e;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding-top: 1em;
+  font-size: 0.9em;
+}

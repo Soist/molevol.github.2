@@ -1,0 +1,61 @@
+h1 {
+  margin: 0;
+  padding-top: 0.9em;
+  padding-left: 0.8em;
+  font-weight: lighter;
+  font-size: 1.15em;
+  color: #45445a;
+}
+
+html,
+body,
+.app {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.popup_outter {
+  position: fixed; /* positioned related to the browser window */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.popup_inner {
+  position: absolute; /* positioned absolutely to its first positioned parent */
+  left: 19%;
+  right: 19%;
+  top: 40%;
+  bottom: 20%;
+  margin: auto;
+  background: #e5e5e5;
+}
+
+.close_btn {
+  position: absolute;
+  left: 96%;
+  top: 2%;
+  padding: 0%;
+  border: none;
+  margin: auto;
+  background-color: #e5e5e5;
+  font-family: serif;
+}
+
+.code {
+  position: absolute;
+  top: 43%;
+  left: 18%;
+  background-color: white;
+  font-weight: bold;
+  text-align: center;
+  width: max-content;
+  font-size: 20px;
+}
