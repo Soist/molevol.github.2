@@ -20,25 +20,52 @@ class Upload extends Component {
   }
 
   changeHandler = (event) => {
-    event.preventDefault();
-
-    const file = event.target.files[0];
-
-    this.setState({ selectedFile: file });
+    console.log(`length of event.target.files: ${event.target.files.length}`);
+    this.setState({ selectedFile: event.target.files[0] });
     this.setState({ isFilePicked: true });
-    console.log("changeHandler");
-    axios
-      .post("http://localhost:4000/upload", file)
-      .then(() => console.log("file uploaded"))
-      .catch((err) => {
-        console.error(err);
-      });
+    console.log(
+      `this.state.selectedFile in changeHandler(): ${JSON.stringify(
+        this.state.selectedFile
+      )}`
+    );
+    console.log(
+      `event.target.files[0] in handleSubmission(): ${JSON.stringify(
+        event.target.files[0]
+      )}`
+    );
+    console.log(
+      `event.target.files[1] in handleSubmission(): ${JSON.stringify(
+        event.target.files[1]
+      )}`
+    );
   };
 
   handleSubmission = (event) => {
     if (this.state.isFilePicked) {
       this.setState({ showPopup: true });
       this.setState({ isInvalid: false });
+
+      const formData = new FormData();
+      formData.append("file", this.state.selectedFile);
+
+      console.log(
+        `this.state.selectedFile in handleSubmission(): ${JSON.stringify(
+          this.state.selectedFile
+        )}`
+      );
+      console.log(`formData: ${JSON.stringify(formData)}`);
+
+      fetch("http://localhost:4000/upload", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log("Success:", result);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     } else {
       this.setState({ showPopup: false });
       this.setState({ isInvalid: true });

@@ -15,6 +15,8 @@ router.post(
     res.send(req.file);
   },
   (error, req, res, next) => {
+    console.log(`req: ${JSON.stringify(req)}`);
+    console.log(`res: ${JSON.stringify(res)}`);
     res.status(400).send({ error: error.message });
   }
 );
