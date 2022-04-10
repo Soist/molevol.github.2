@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Pages.css";
 import logo from "../../imgs/logo.png";
 import Popup from "./Popup";
-import axios from "axios";
 
 class Upload extends Component {
   constructor(props) {
@@ -21,23 +20,15 @@ class Upload extends Component {
 
   changeHandler = (event) => {
     console.log(`length of event.target.files: ${event.target.files.length}`);
-    this.setState({ selectedFile: event.target.files[0] });
+    console.log(`event.target.files[0]: ${event.target.files[0]}`);
+    this.setState({ selectedFile: event.target.files[0] }, () => {
+      console.log(
+          `this.state.selectedFile in changeHandler(): ${
+              this.state.selectedFile
+          }`
+      );
+    });
     this.setState({ isFilePicked: true });
-    console.log(
-      `this.state.selectedFile in changeHandler(): ${JSON.stringify(
-        this.state.selectedFile
-      )}`
-    );
-    console.log(
-      `event.target.files[0] in handleSubmission(): ${JSON.stringify(
-        event.target.files[0]
-      )}`
-    );
-    console.log(
-      `event.target.files[1] in handleSubmission(): ${JSON.stringify(
-        event.target.files[1]
-      )}`
-    );
   };
 
   handleSubmission = (event) => {
@@ -47,13 +38,6 @@ class Upload extends Component {
 
       const formData = new FormData();
       formData.append("file", this.state.selectedFile);
-
-      console.log(
-        `this.state.selectedFile in handleSubmission(): ${JSON.stringify(
-          this.state.selectedFile
-        )}`
-      );
-      console.log(`formData: ${JSON.stringify(formData)}`);
 
       fetch("http://localhost:4000/upload", {
         method: "POST",
