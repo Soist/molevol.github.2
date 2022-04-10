@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 
 router.post(
   "/",
-  clientExcelUpload.single("clientExcel"),
+  clientExcelUpload.single("file"),
   function (req, res) {
     res.send(req.file);
   },
